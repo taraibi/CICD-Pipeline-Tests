@@ -1,6 +1,12 @@
-FROM node:slim
-MAINTAINER student
-WORKDIR /app
-COPY index.js /app/index.js
-COPY package.json /app/package.json
+FROM node:8
+# Create app director
+COPY package*.json ./
+
 RUN npm install
+COPY . .
+RUN npm run build
+COPY entrypoint.sh /entrypoint.sh
+RUN ["chmod", "+x", "/entrypoint.sh"]
+ENTRYPOINT ["/entrypoint.sh"]
+EXPOSE 3000
+CMD [ "npm", "start" ]
