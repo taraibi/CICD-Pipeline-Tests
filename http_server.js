@@ -1,9 +1,10 @@
 const express = require('express');
 const app = express();
-const cors = require('cors');
 
-// allow cross-origin resource sharing (CORS)
-app.use(cors());
+
+
+let port = process.env.PORT || 3000;
+
 
 
 app.get('/', function (req, res) {
