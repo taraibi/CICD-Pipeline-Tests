@@ -11,7 +11,7 @@
   "devDependencies": {},
   "scripts": {
     "build": "npm install",
-    "start": "node hello.js",
+    "start": "node http_server.js",
     "test": "jest"
   },
   "author": "jrw@mit.edu",
